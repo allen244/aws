@@ -18,15 +18,15 @@ public class JmsTextMessageServiceImpl implements JmsTextMessageService {
     private Queue textMessageQueue;
     private JmsTemplate jmsTemplate;
 
-//    public JmsTextMessageServiceImpl(Queue textMessageQueue, JmsTemplate jmsTemplate) {
-//        this.textMessageQueue = textMessageQueue;
-//        this.jmsTemplate = jmsTemplate;
-//    }
+    public JmsTextMessageServiceImpl(Queue textMessageQueue, JmsTemplate jmsTemplate) {
+        this.textMessageQueue = textMessageQueue;
+        this.jmsTemplate = jmsTemplate;
+    }
 
-//    @Autowired
-//    public void setTextMessageQueue(Queue textMessageQueue) {
-//        this.textMessageQueue = textMessageQueue;
-//    }
+    @Autowired
+    public void setTextMessageQueue(Queue textMessageQueue) {
+        this.textMessageQueue = textMessageQueue;
+    }
 
     @Autowired
     public void setJmsTemplate(JmsTemplate jmsTemplate) {
