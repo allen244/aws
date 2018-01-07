@@ -1,0 +1,5 @@
+com:
+  avs:
+  aws:
+    profile:
+      message: This is my DEV profile
