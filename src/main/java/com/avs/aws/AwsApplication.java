@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AwsApplication {
 
+
+	//test
 	public static void main(String[] args) {
 		SpringApplication.run(AwsApplication.class, args);
 	}
