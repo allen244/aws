@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by jt on 1/26/16.
@@ -33,7 +34,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProduct(Integer id) {
         jmsTextMessageService.sendTextMessage("Fetching Product ID: " + id);
-        return productRepository.findOne(id);
+        Optional<Product> optionalProduct = productRepository.findById(id);
+
+        return optionalProduct.get();
     }
 
     @Override
@@ -43,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
         jmsTextMessageService.sendTextMessage("Listing Products");
         productRepository.findAll().iterator().forEachRemaining(target::add);
 
-       test = AwsUtil.toList(productRepository.findAll());
+        test = AwsUtil.toList(productRepository.findAll());
         return target;
 
 
